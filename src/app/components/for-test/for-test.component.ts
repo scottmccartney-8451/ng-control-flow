@@ -5,7 +5,7 @@ import {Item} from '../../app.component';
   selector: 'app-for-test',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule, // Need to include this for *ngIf to work
   ],
   templateUrl: './for-test.component.html',
   styleUrl: './for-test.component.scss'
@@ -19,7 +19,7 @@ export class ForTestComponent {
     { id: '3', name: 'Item 3' },
   ]);
   itemNames = computed<string[]>(() => {
-    console.log('Hit computed');
+    console.log('Render computed list');
     return this.items().map((item) => item.name)
   });
 
@@ -31,7 +31,7 @@ export class ForTestComponent {
   ];
 
   getItemNamesOld(): string[] {
-    console.log('Hit old way');
+    console.log('Render *ngFor list');
     return this.itemsOld.map((item) => item.name);
   }
 
