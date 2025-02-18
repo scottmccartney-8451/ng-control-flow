@@ -1,0 +1,7 @@
+<h2>Signal Inputs</h2>
+<div>{{ displayName() }}</div>
+<input type="text" (keydown.enter)="emitUpdate($event)" placeholder="Update name">
+
+<h2>Old Inputs</h2>
+<div>{{ getDisplayName() }}</div>
+<input type="text" (keydown.enter)="emitUpdateOld($event)" placeholder="Update old name">

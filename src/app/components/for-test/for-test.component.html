@@ -1,0 +1,12 @@
+<button (click)="addItem()">Add Item</button>
+<h2>&#64;for ()</h2>
+<ul>
+  @for (i of itemNames(); track i) {
+    <li>{{ i }}</li>
+  }
+</ul>
+
+<h2>*ngFor</h2>
+<ul>
+  <li *ngFor="let item of getItemNamesOld()">{{ item }}</li>
+</ul>

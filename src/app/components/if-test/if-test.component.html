@@ -1,0 +1,33 @@
+<h2>&#64;if ()</h2>
+<div>
+  <b>Score: </b>
+  @if (score() > 90) {
+    <span>A</span>
+  } @else if (score() > 80) {
+    <span>B</span>
+  } @else if (score() > 70) {
+    <span>C</span>
+  } @else if (score() > 60) {
+    <span>D</span>
+  } @else {
+    <span>F</span>
+  }
+</div>
+
+<h2>*ngIf</h2>
+<div>
+  <b>Score: </b>
+  <span *ngIf="scoreOld > 90; else lessThanA">A</span>
+  <ng-template #lessThanA>
+    <span *ngIf="scoreOld > 80; else lessThanB">B</span>
+    <ng-template #lessThanB>
+      <span *ngIf="scoreOld > 70; else lessThanC">C</span>
+      <ng-template #lessThanC>
+        <span *ngIf="scoreOld > 60; else lessThanD">D</span>
+        <ng-template #lessThanD>
+          <span>F</span>
+        </ng-template>
+      </ng-template>
+    </ng-template>
+  </ng-template>
+</div>
